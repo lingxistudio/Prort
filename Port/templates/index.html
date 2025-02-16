@@ -1,0 +1,81 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header('Location: login.html');
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代理服务管理系统 - 首页</title>
+    <link rel="stylesheet" href="/static/lightyear/lightyear.css">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="ly-navbar">
+        <a href="#" class="ly-logo">代理服务管理系统</a>
+        <ul class="ly-nav-links">
+            <li><a href="#">首页</a></li>
+            <li><a href="change_password.php">修改密码</a></li>
+            <li><a href="logout.php">退出登录</a></li>
+        </ul>
+    </nav>
+
+    <!-- 卡片展示系统信息 -->
+    <div class="ly-card">
+        <div class="ly-card-header">当前信息</div>
+        <div class="ly-card-body">
+            <p id="socks_info">SOCKS5 端口：待获取，连接状态：待获取</p>
+            <p id="http_info">HTTP 端口：待获取，连接状态：待获取</p>
+            <p id="mtproto_info">MTProto 端口：待获取，连接状态：待获取</p>
+            <p id="pptp_info">PPTP 端口：待获取，连接状态：待获取</p>
+            <p id="l2tp_info">L2TP 端口：待获取，连接状态：待获取</p>
+            <p id="reverse_proxy_info">反代端口：待获取，连接状态：待获取</p>
+            <p id="cpu_info">CPU 占用率：待获取</p>
+            <p id="memory_info">内存占用率：待获取</p>
+        </div>
+    </div>
+
+    <!-- 部署代理服务表单 -->
+    <div class="ly-card">
+        <div class="ly-card-header">部署代理服务</div>
+        <div class="ly-card-body">
+            <form id="deploy-form" action="process.php" method="post">
+                <div class="form-group">
+                    <label for="socks_port">SOCKS5 端口</label>
+                    <input type="number" class="ly-input" id="socks_port" name="socks_port" required>
+                </div>
+                <div class="form-group">
+                    <label for="http_port">HTTP 端口</label>
+                    <input type="number" class="ly-input" id="http_port" name="http_port" required>
+                </div>
+                <div class="form-group">
+                    <label for="mtproto_port">MTProto 端口</label>
+                    <input type="number" class="ly-input" id="mtproto_port" name="mtproto_port" required>
+                </div>
+                <div class="form-group">
+                    <label for="pptp_port">PPTP 端口</label>
+                    <input type="number" class="ly-input" id="pptp_port" name="pptp_port" required>
+                </div>
+                <div class="form-group">
+                    <label for="l2tp_port">L2TP 端口</label>
+                    <input type="number" class="ly-input" id="l2tp_port" name="l2tp_port" required>
+                </div>
+                <div class="form-group">
+                    <label for="reverse_proxy_port">反代端口</label>
+                    <input type="number" class="ly-input" id="reverse_proxy_port" name="reverse_proxy_port" required>
+                </div>
+                <button type="submit" class="ly-btn ly-btn-primary">部署</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/lightyear/lightyear.js"></script>
+</body>
+
+</html>

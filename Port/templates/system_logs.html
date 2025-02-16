@@ -1,0 +1,89 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header('Location: login.html');
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统日志 - 代理服务管理系统</title>
+    <link rel="stylesheet" href="/static/lightyear/lightyear.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f3f5;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="ly-navbar">
+        <a href="#" class="ly-logo">代理服务管理系统</a>
+        <ul class="ly-nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="change_password.php">修改密码</a></li>
+            <li><a href="account_management.html">账户管理</a></li>
+            <li><a href="system_logs.html">系统日志</a></li>
+            <li><a href="logout.php">退出登录</a></li>
+        </ul>
+    </nav>
+
+    <!-- 卡片展示系统日志列表 -->
+    <div class="ly-card">
+        <div class="ly-card-header">系统日志</div>
+        <div class="ly-card-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>日志编号</th>
+                        <th>操作类型</th>
+                        <th>操作时间</th>
+                        <th>操作详情</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 这里可以通过 PHP 动态生成日志列表 -->
+                    <!-- 示例数据 -->
+                    <tr>
+                        <td>1</td>
+                        <td>代理服务部署</td>
+                        <td>2025-02-17 10:00:00</td>
+                        <td>成功部署 SOCKS5 代理服务，端口号：1080</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>账户添加</td>
+                        <td>2025-02-17 10:30:00</td>
+                        <td>为 HTTP 代理服务添加新账户，用户名：user1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/static/lightyear/lightyear.js"></script>
+</body>
+
+</html>
