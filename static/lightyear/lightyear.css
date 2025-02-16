@@ -1,0 +1,241 @@
+/* 全局样式 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f7fa;
+    color: #333;
+}
+
+/* 导航栏样式 */
+.ly-navbar {
+    background-color: #2d3436;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.ly-navbar .ly-logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.ly-navbar .ly-nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.ly-navbar .ly-nav-links li {
+    margin-right: 20px;
+}
+
+.ly-navbar .ly-nav-links li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.ly-navbar .ly-nav-links li a:hover {
+    color: #00a8ff;
+}
+
+/* 卡片样式 */
+.ly-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.ly-card .ly-card-header {
+    padding: 15px 20px;
+    background-color: #f0f3f5;
+    border-bottom: 1px solid #e6e9ed;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ly-card .ly-card-body {
+    padding: 20px;
+}
+
+/* 按钮样式 */
+.ly-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.ly-btn-primary {
+    background-color: #00a8ff;
+    color: white;
+}
+
+.ly-btn-primary:hover {
+    background-color: #0097e6;
+}
+
+.ly-btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.ly-btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.ly-btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.ly-btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* 输入框和选择框样式 */
+.ly-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.ly-input:focus {
+    border-color: #00a8ff;
+    outline: none;
+}
+
+.ly-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M6 8.293l-3.293-3.293a1 1 0 0 1 1.414-1.414L6 5.414l2.879-2.879a1 1 0 1 1 1.414 1.414L6 8.293z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.ly-select:focus {
+    border-color: #00a8ff;
+    outline: none;
+}
+
+/* 模态框样式 */
+.ly-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ly-modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ly-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e9ed;
+}
+
+.ly-modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.ly-modal-close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.ly-modal-close:hover {
+    color: black;
+}
+
+.ly-modal-body {
+    padding: 20px 0;
+}
+
+.ly-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    border-top: 1px solid #e6e9ed;
+}
+
+/* 表格样式 */
+.ly-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.ly-table th,
+.ly-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.ly-table th {
+    background-color: #f0f3f5;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+   .ly-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+   .ly-navbar .ly-nav-links {
+        margin-top: 10px;
+    }
+
+   .ly-navbar .ly-nav-links li {
+        margin-right: 15px;
+    }
+}

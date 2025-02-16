@@ -1,0 +1,122 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header('Location: login.html');
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务监控 - 代理服务管理系统</title>
+    <link rel="stylesheet" href="/static/lightyear/lightyear.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f3f5;
+        }
+
+        .status-running {
+            color: green;
+        }
+
+        .status-stopped {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="ly-navbar">
+        <a href="#" class="ly-logo">代理服务管理系统</a>
+        <ul class="ly-nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="change_password.php">修改密码</a></li>
+            <li><a href="account_management.html">账户管理</a></li>
+            <li><a href="system_logs.html">系统日志</a></li>
+            <li><a href="service_monitoring.html">服务监控</a></li>
+            <li><a href="logout.php">退出登录</a></li>
+        </ul>
+    </nav>
+
+    <!-- 卡片展示代理服务状态列表 -->
+    <div class="ly-card">
+        <div class="ly-card-header">代理服务状态监控</div>
+        <div class="ly-card-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>服务类型</th>
+                        <th>端口</th>
+                        <th>连接数</th>
+                        <th>流量使用情况</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 这里可以通过 PHP 动态生成服务状态列表 -->
+                    <!-- 示例数据 -->
+                    <tr>
+                        <td>SOCKS5</td>
+                        <td>1080</td>
+                        <td>20</td>
+                        <td>100MB</td>
+                        <td class="status-running">运行中</td>
+                    </tr>
+                    <tr>
+                        <td>HTTP</td>
+                        <td>8888</td>
+                        <td>15</td>
+                        <td>80MB</td>
+                        <td class="status-running">运行中</td>
+                    </tr>
+                    <tr>
+                        <td>PPTP</td>
+                        <td>1723</td>
+                        <td>10</td>
+                        <td>50MB</td>
+                        <td class="status-running">运行中</td>
+                    </tr>
+                    <tr>
+                        <td>L2TP</td>
+                        <td>500</td>
+                        <td>8</td>
+                        <td>40MB</td>
+                        <td class="status-running">运行中</td>
+                    </tr>
+                    <tr>
+                        <td>反代</td>
+                        <td>8080</td>
+                        <td>12</td>
+                        <td>60MB</td>
+                        <td class="status-running">运行中</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/static/lightyear/lightyear.js"></script>
+</body>
+
+</html>
